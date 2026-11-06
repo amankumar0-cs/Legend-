@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Files - Aman Cloud</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>Aman Cloud</h2>
+</header>
+
+<div class="container">
+  <h1>My Files</h1>
+
+  <input
+    type="text"
+    id="search"
+    placeholder="Search files..."
+    onkeyup="searchFiles()"
+  >
+
+  <ul id="fileList">
+    <li>📄 Resume.pdf</li>
+    <li>🖼️ Photo.jpg</li>
+    <li>🎵 Song.mp3</li>
+    <li>🎥 Video.mp4</li>
+  </ul>
+
+  <br>
+
+  <a href="dashboard.html">
+    <button>⬅ Back to Dashboard</button>
+  </a>
+</div>
+
+<script>
+function searchFiles() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let items = document.querySelectorAll("#fileList li");
+
+  items.forEach(item => {
+    item.style.display = item.textContent.toLowerCase().includes(input)
+      ? "list-item"
+      : "none";
+  });
+}
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

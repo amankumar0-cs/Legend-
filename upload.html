@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File - Aman Cloud</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>☁️ Aman Cloud</h1>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>📤 Upload File</h2>
+
+        <input type="file" id="fileInput">
+
+        <br><br>
+
+        <button id="uploadBtn">
+            Upload File
+        </button>
+
+        <br><br>
+
+        <progress id="uploadProgress" value="0" max="100" style="width:100%;"></progress>
+
+        <p id="status">
+            No file selected
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>📂 Uploaded Files</h3>
+
+        <ul id="fileList">
+            <li>No files uploaded</li>
+        </ul>
+    </div>
+
+    <a href="dashboard.html">
+        <button>⬅ Back to Dashboard</button>
+    </a>
+
+</div>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
+<div class="upload-preview">
+    <h2>Preview</h2>
+
+    <img id="previewImage" src="" alt="Preview" style="display:none; max-width:250px; border-radius:10px;">
+
+    <h3 id="previewTitle"></h3>
+    <p id="previewPrice"></p>
+    <p id="previewDesc"></p>
+
+    <button id="uploadBtn">Upload Product</button>
+</div>
+
+<script>
+const imageInput = document.getElementById("image");
+const titleInput = document.getElementById("title");
+const priceInput = document.getElementById("price");
+const descInput = document.getElementById("description");
+
+const previewImage = document.getElementById("previewImage");
+const previewTitle = document.getElementById("previewTitle");
+const previewPrice = document.getElementById("previewPrice");
+const previewDesc = document.getElementById("previewDesc");
+
+imageInput.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            previewImage.src = e.target.result;
+            previewImage.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+titleInput.addEventListener("input", () => {
+    previewTitle.textContent = titleInput.value;
+});
+
+priceInput.addEventListener("input", () => {
+    previewPrice.textContent = "₹ " + priceInput.value;
+});
+
+descInput.addEventListener("input", () => {
+    previewDesc.textContent = descInput.value;
+});
+
+document.getElementById("uploadBtn").addEventListener("click", () => {
+    alert("Product upload feature Firebase se connect karenge agle step me.");
+});
+          </script>

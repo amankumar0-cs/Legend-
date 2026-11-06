@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aman Cloud Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>☁️ Aman Cloud</h1>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>👋 Welcome</h2>
+    <p id="welcomeUser">Welcome to Aman Cloud</p>
+  </div>
+
+  <div class="card">
+    <h3>📦 Storage Usage</h3>
+
+    <div class="progress">
+      <div class="progress-bar" id="storageBar"></div>
+    </div>
+
+    <p id="storageText">0 MB / 1 TB Used</p>
+  </div>
+
+  <div class="card">
+    <h3>⚡ Quick Actions</h3>
+
+    <a href="upload.html">
+      <button>⬆️ Upload File</button>
+    </a>
+
+    <a href="files.html">
+      <button>📁 My Files</button>
+    </a>
+
+    <a href="profile.html">
+      <button>👤 Profile</button>
+    </a>
+
+    <a href="settings.html">
+      <button>⚙️ Settings</button>
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>🕒 Recent Files</h3>
+
+    <ul id="recentFiles">
+      <li>No recent files</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>⭐ Favourite Files</h3>
+
+    <ul id="favoriteFiles">
+      <li>No favourite files</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>☁️ Cloud Status</h3>
+
+    <p style="color:green;font-weight:bold;">
+      Connected ✅
+    </p>
+  </div>
+    <div class="card">
+    <h3>🔔 Notifications</h3>
+
+    <ul id="notificationList">
+      <li>🎉 Welcome to Aman Cloud</li>
+      <li>☁️ Firebase Connected</li>
+    </ul>
+  </div>
+
+  <div class="card" id="fileDetails" style="display:none;">
+    <h3>📄 File Details</h3>
+
+    <p><strong>Name:</strong> <span id="detailName">-</span></p>
+    <p><strong>Size:</strong> <span id="detailSize">0 KB</span></p>
+    <p><strong>Type:</strong> <span id="detailType">Unknown</span></p>
+
+    <button onclick="closeDetails()">Close</button>
+  </div>
+
+  <br>
+
+  <a href="login.html">
+    <button style="background:#dc2626;">
+      🚪 Logout
+    </button>
+  </a>
+
+</div>
+
+<footer class="bottom-nav">
+
+  <a href="dashboard.html">
+    🏠<br>Home
+  </a>
+
+  <a href="upload.html">
+    ⬆️<br>Upload
+  </a>
+
+  <a href="files.html">
+    📁<br>Files
+  </a>
+
+  <a href="profile.html">
+    👤<br>Profile
+  </a>
+
+  <a href="settings.html">
+    ⚙️<br>Settings
+  </a>
+
+</footer>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
